@@ -6,6 +6,7 @@ from flask import render_template, url_for, redirect
 @home.route('/')
 def index():
   return render_template('home/index.html')
+  # return 'hello'
 
 @home.route('/login')
 def login():

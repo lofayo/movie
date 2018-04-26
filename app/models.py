@@ -10,6 +10,8 @@ app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://lofayo:199212@127.0.0.1:3306/movie'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config["SECRET_KEY"] = 'af2fad8cfe1f4c5fac4aa5edf6fcc8f3'
+app.config["WTF_CSRF_SECRET_KEY"] = 'sfsfsfsfs'
 
 db = SQLAlchemy(app)
 
