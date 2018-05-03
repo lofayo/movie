@@ -1,4 +1,4 @@
-#coding:utf8
+# coding:utf8
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -14,6 +14,7 @@ app.config["SECRET_KEY"] = '\xdd\xc0\x04\xc3\xd1\xfbW\x18\t\xc3\x0c\x10\x89\xae\
 app.config["WTF_CSRF_SECRET_KEY"] = '\xdd\xc0\x04\xc3\xd1\xfbW\x18\t\xc3\x0c\x10\x89\xae\x89\x13\xfc\xab\x84\\\xf5\xd4-\x96'
 
 db = SQLAlchemy(app)
+
 
 # 会员
 class User(db.Model):

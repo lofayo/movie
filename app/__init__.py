@@ -1,6 +1,11 @@
 #coding:utf8
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
+import pymysql
+from app.home import home as home_blueprint
+from app.admin import admin as admin_blueprint
+
+pymysql.install_as_MySQLdb()
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://lofayo:123456@127.0.0.1:3306/movie'
@@ -12,8 +17,7 @@ app.config["WTF_CSRF_SECRET_KEY"] = '\xdd\xc0\x04\xc3\xd1\xfbW\x18\t\xc3\x0c\x10
 
 db = SQLAlchemy(app)
 # 导入蓝图
-from app.home import home as home_blueprint
-from app.admin import admin as admin_blueprint
+
 
 # 注册蓝图
 app.register_blueprint(home_blueprint)
